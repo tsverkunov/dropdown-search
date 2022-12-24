@@ -1,0 +1,26 @@
+$primary-color: grey;
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  background:$primary-color;
+  color: #fff;
+  padding: 20px;
+  &__logo {
+    font-weight: bold;
+  }
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  &__link {
+    text-decoration: none;
+    padding-right: 20px;
+    color: #fff;
+    &-active {
+      font-weight: bold;
+    }
+  }
+}
+
