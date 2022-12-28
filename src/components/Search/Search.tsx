@@ -12,16 +12,6 @@ const Search = () => {
   const dropdown = useSelector((state: any) => state.githubReducer.dropdown)
   const debounced = useDebounce(searchWord)
 
-  // useEffect(() => {
-  //   setDropdown(debounced.length > 2 && items.length > 0)
-  //   if (debounced.length > 2) {
-  //     githubApi(debounced)
-  //       .then((res) => {
-  //         setItems(res.items)
-  //       })
-  //   }
-  // }, [debounced, items])
-
   useEffect(() => {
     dispatch(setDropdownAC(false))
     if (debounced.length > 2) {
@@ -32,16 +22,19 @@ const Search = () => {
 
   return (
     <div className="search">
-      <input type="text"
-             className="search__input"
-             placeholder="Search users..."
-             value={searchWord}
-             onChange={e => dispatch(changeSearchWordAC(e.target.value))}
+      <input
+        type="text"
+        className="search__input"
+        placeholder="Search users..."
+        value={searchWord}
+        onChange={e => dispatch(changeSearchWordAC(e.target.value))}
       />
       {
         dropdown && <div className="search__result">
           <ul className="search__list">
-            {users?.map((user: IUser) => <li className="search__item" key={user.id}>{user.login}</li>)}
+            {users?.map((user: IUser) => (
+              <li className="search__item" key={user.id}>{user.login}</li>
+            ))}
           </ul>
         </div>
       }

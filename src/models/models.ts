@@ -25,3 +25,9 @@ export interface ServerResponse<T> {
   incomplete_results: boolean;
   items: T[];
 }
+
+export interface IState {
+  users: IUser[] | [],
+  searchWord: string,
+  dropdown: boolean
+}

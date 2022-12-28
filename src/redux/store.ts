@@ -1,8 +1,7 @@
-import {applyMiddleware, combineReducers, compose, legacy_createStore as createStore} from "redux"
-import thunk from "redux-thunk";
-import {githubReducer} from "./githubReducer";
+import {applyMiddleware, combineReducers, legacy_createStore as createStore} from "redux"
+import thunk from "redux-thunk"
+import {githubReducer} from "./githubReducer"
 import {composeWithDevTools} from '@redux-devtools/extension'
-
 
 let rootReducer = combineReducers({
   githubReducer
